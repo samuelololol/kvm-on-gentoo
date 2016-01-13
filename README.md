@@ -29,13 +29,25 @@ reference:
     $ emerge -av net-misc/bridge-utils app-emulation/qemu
 
 ## bridge setting
+
+* set null to original interface
+* use original interface setting on new bridge
+* reference: [https://wiki.gentoo.org/wiki/Network_bridge#OpenRC](https://wiki.gentoo.org/wiki/Network_bridge#OpenRC)
+
 ### example(static ip)
 
-    config_eth0="null" #set null to original interface 
+    config_eth0="null"
     bridge_br0="eth0"
-    config_br0="192.168.1.2/24" #use setting from original interface
+    config_br0="192.168.1.2/24"
     brctl_br0="setfd 0 stp off"
+
+### example(dhcp)
+    
+    config_eth0="null"
+    config_br0="dhcp"
+    brctl_br0="setfd 0 sethello 10 stp off"
+    bridge_br0="eth0"
 
 ### init script
 
-    $ ln -s /etc/init.d/net.lo /etc/init.d/net.br0 ; /etc/init.d/net.br0 start
+    $ ln -s /etc/init.d/net.lo /etc/init.d/net.br0 ; /etc/init.d/net.br0 start ; rc-update add net.br0 default
