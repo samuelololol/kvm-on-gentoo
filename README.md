@@ -22,7 +22,7 @@ kvm on gentoo
 
 ## install
 
-    emerge -av net-misc/bridge-utils app-emulation/qemu
+    $ emerge -av net-misc/bridge-utils app-emulation/qemu
 
 ## bridge setting
 ### static ip example
@@ -31,3 +31,7 @@ kvm on gentoo
     bridge_br0="eth0"
     config_br0="192.168.1.2/24" #use setting from original interface
     brctl_br0="setfd 0 stp off"
+
+### init script
+
+    $ ln -s /etc/init.d/net.lo /etc/init.d/net.br0 ; /etc/init.d/net.br0 start
