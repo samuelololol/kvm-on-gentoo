@@ -1,5 +1,9 @@
 # kvm-on-gentoo
-kvm on gentoo
+kvm on gentoo.
+
+reference:
+* [https://wiki.gentoo.org/wiki/QEMU#Networking](https://wiki.gentoo.org/wiki/QEMU#Networking)
+* [http://www.agix.com.au/install-kvm-qemu-gentoo/](http://www.agix.com.au/install-kvm-qemu-gentoo/)
 
 ## kernel config(4.2.3-aufs)
 
