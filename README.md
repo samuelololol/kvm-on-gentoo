@@ -25,7 +25,7 @@ kvm on gentoo
     $ emerge -av net-misc/bridge-utils app-emulation/qemu
 
 ## bridge setting
-### static ip example
+### example(static ip)
 
     config_eth0="null" #set null to original interface 
     bridge_br0="eth0"
