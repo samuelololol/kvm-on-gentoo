@@ -15,7 +15,7 @@ kvm on gentoo
       Networking options
         <*> 802.1d Ethernet Bridging (CONFIG_BRIDGE)
 
-## use flag
+## USE flag
 
     app-emulation/qemu qemu_softmmu_targets_arm qemu_user_targets_arm qemu_user_targets_x86_64 sdl sdl2 usb smartcard gtk2 gtk
     media-libs/mesa gles2
@@ -23,3 +23,11 @@ kvm on gentoo
 ## install
 
     emerge -av net-misc/bridge-utils app-emulation/qemu
+
+## bridge setting
+### static ip example
+
+    config_eth0="null" #set null to original interface 
+    bridge_br0="eth0"
+    config_br0="192.168.1.2/24" #use setting from original interface
+    brctl_br0="setfd 0 stp off"
