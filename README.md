@@ -19,3 +19,7 @@ kvm on gentoo
 
     app-emulation/qemu qemu_softmmu_targets_arm qemu_user_targets_arm qemu_user_targets_x86_64 sdl sdl2 usb smartcard gtk2 gtk
     media-libs/mesa gles2
+
+## install
+
+    emerge -av net-misc/bridge-utils app-emulation/qemu
